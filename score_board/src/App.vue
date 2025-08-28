@@ -1,6 +1,7 @@
 <script setup>
-import { reactive, onMounted, watch, onUnmounted } from "vue";
+import { reactive, onMounted, watch, onUnmounted, ref } from "vue";
 import axios from "axios";
+import { useRouter, useRoute } from "vue-router";
 
 const courts = reactive([]);
 const leagueTable1 = reactive([]);
@@ -53,15 +54,39 @@ watch(
 function updateScore(courtIdx, setIdx, delta) {
   // ...existing code...
 }
+
+const router = useRouter();
+const route = useRoute();
+
+const isAdmin = ref(route.path.includes("admin"));
+
+function switchMode() {
+  if (isAdmin.value) {
+    router.push("/display");
+  } else {
+    router.push("/admin");
+  }
+  isAdmin.value = !isAdmin.value;
+}
 </script>
 
 <template>
   <div class="bg-scoreboard">
+    <!-- Floating Switch Button -->
+    <button
+      @click="switchMode"
+      class="floating-switch-btn"
+      :title="isAdmin ? 'Switch to Display' : 'Switch to Admin'"
+    >
+      {{ isAdmin ? "Display" : "Admin" }}
+    </button>
     <router-view
       :courts="courts"
-      :updateScore="updateScore"
       :leagueTable1="leagueTable1"
       :leagueTable2="leagueTable2"
+      :updateScore="updateScore"
+      :selectedCourtIdx="selectedCourtIdx"
+      :setSelectedCourtIdx="setSelectedCourtIdx"
     />
   </div>
 </template>
@@ -78,5 +103,24 @@ function updateScore(courtIdx, setIdx, delta) {
   width: 100vw;
   height: 100vh;
   z-index: -1;
+}
+
+.floating-switch-btn {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 1000;
+  background: #673ab7;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.floating-switch-btn:hover {
+  background: #5e35b1;
 }
 </style>
