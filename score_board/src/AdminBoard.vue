@@ -6,7 +6,11 @@
       <div class="col-md-8">
         <div class="bg-white px-4 py-2 rounded">
           <div class="mb-3 mt-3 d-flex justify-content-center gap-2">
-            <select v-model="selectedCourtIdx" class="form-select w-auto">
+            <select
+              v-model="selectedCourtIdx"
+              class="form-select w-auto"
+              style="width: 180px"
+            >
               <option
                 v-for="(court, idx) in courts"
                 :key="court.name"
@@ -38,7 +42,7 @@
                 <select
                   v-model="courts[selectedCourtIdx].teams[0].flag"
                   class="form-select form-select-sm"
-                  style="width: 60px"
+                  style="width: 80px"
                 >
                   <option
                     v-for="country in countries"
@@ -110,7 +114,7 @@
                 <select
                   v-model="courts[selectedCourtIdx].teams[1].flag"
                   class="form-select form-select-sm"
-                  style="width: 60px"
+                  style="width: 80px"
                 >
                   <option
                     v-for="country in countries"
