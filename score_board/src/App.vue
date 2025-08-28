@@ -10,9 +10,9 @@ const leagueTable2 = reactive([]);
 // Fetch data from backend
 async function fetchData() {
   const [courtsRes, table1Res, table2Res] = await Promise.all([
-    axios.get("http://localhost:3001/api/courts"),
-    axios.get("http://localhost:3001/api/leagueTable1"),
-    axios.get("http://localhost:3001/api/leagueTable2"),
+    axios.get("/api/courts"),
+    axios.get("/api/leagueTable1"),
+    axios.get("/api/leagueTable2"),
   ]);
   courts.splice(0, courts.length, ...courtsRes.data);
   leagueTable1.splice(0, leagueTable1.length, ...table1Res.data);
