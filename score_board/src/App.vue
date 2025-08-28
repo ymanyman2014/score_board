@@ -32,21 +32,21 @@ onUnmounted(() => {
 watch(
   courts,
   (val) => {
-    axios.put("http://localhost:3001/api/courts", val);
+    axios.put("/api/courts", val);
   },
   { deep: true }
 );
 watch(
   leagueTable1,
   (val) => {
-    axios.put("http://localhost:3001/api/leagueTable1", val);
+    axios.put("/api/leagueTable1", val);
   },
   { deep: true }
 );
 watch(
   leagueTable2,
   (val) => {
-    axios.put("http://localhost:3001/api/leagueTable2", val);
+    axios.put("/api/leagueTable2", val);
   },
   { deep: true }
 );
