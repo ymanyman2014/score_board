@@ -4,7 +4,7 @@
       <img
         src="@/images/Banner.png"
         alt="Scoreboard Banner"
-        class="img-fluid"
+        class="img-fluid mt-10"
         style="max-height: 120px"
       />
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="container py-4">
     <h1 class="mb-4 text-center text-white">Score Board (Admin)</h1>
-    <div class="mb-4 d-flex justify-content-center">
+    <div class="mb-4 d-flex justify-content-center gap-3">
       <select v-model="selectedCourtIdx" class="form-select w-auto">
         <option v-for="(court, idx) in courts" :key="court.name" :value="idx">
           {{ court.name }}
@@ -99,8 +99,14 @@
     </div>
     <!-- League Tables -->
     <div class="row mt-5">
-      <div class="col-md-6 mb-4">
-        <div class="league-table-wrapper" style="font-size: 0.95rem">
+      <div
+        v-if="selectedCourtIdx === 0 || selectedCourtIdx === 1"
+        class="col-md-6 mb-4 offset-md-3"
+      >
+        <div
+          class="league-table-wrapper"
+          style="font-size: 0.95rem; margin-top: -2rem"
+        >
           <h5 class="text-center mb-2" style="font-size: 1.1rem">
             Live League Table
           </h5>
@@ -158,8 +164,14 @@
           </table>
         </div>
       </div>
-      <div class="col-md-6 mb-4">
-        <div class="league-table-wrapper" style="font-size: 0.95rem">
+      <div
+        v-if="selectedCourtIdx === 2 || selectedCourtIdx === 3"
+        class="col-md-6 mb-4 offset-md-3"
+      >
+        <div
+          class="league-table-wrapper"
+          style="font-size: 0.95rem; margin-top: -2rem"
+        >
           <h5 class="text-center mb-2" style="font-size: 1.1rem">
             Live League Table
           </h5>

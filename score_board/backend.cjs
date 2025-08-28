@@ -44,16 +44,16 @@ let courts = [
 ];
 
 let leagueTable1 = [
-  { team: "Philippines", played: 2, won: 9, lost: 1, gd: 22, points: 9 },
-  { team: "Malaysia", played: 2, won: 6, lost: 4, gd: 14, points: 6 },
-  { team: "Hong Kong", played: 2, won: 4, lost: 6, gd: 3, points: 4 },
-  { team: "Pakistan", played: 2, won: 1, lost: 9, gd: -11, points: 1 },
+  { team: "Philippines", played: 0, won: 0, lost: 0, gd: 0, points: 0 },
+  { team: "Malaysia", played: 0, won: 0, lost: 0, gd: 0, points: 0 },
+  { team: "Hong Kong", played: 0, won: 0, lost: 0, gd: 0, points: 0 },
+  { team: "Pakistan", played: 0, won: 0, lost: 0, gd: 0, points: 0 },
 ];
 let leagueTable2 = [
-  { team: "Thailand", played: 2, won: 7, lost: 3, gd: 19, points: 7 },
-  { team: "India", played: 2, won: 5, lost: 5, gd: 11, points: 5 },
-  { team: "Singapore", played: 2, won: 5, lost: 5, gd: 8, points: 5 },
-  { team: "South Korea", played: 2, won: 3, lost: 7, gd: -2, points: 3 },
+  { team: "Thailand", played: 0, won: 0, lost: 0, gd: 0, points: 0 },
+  { team: "India", played: 0, won: 0, lost: 0, gd: 0, points: 0 },
+  { team: "Singapore", played: 0, won: 0, lost: 0, gd: 0, points: 0 },
+  { team: "South Korea", played: 0, won: 0, lost: 0, gd: 0, points: 0 },
 ];
 
 // GET endpoints
