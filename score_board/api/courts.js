@@ -7,7 +7,30 @@ let courts = [
       { name: "Team B", scores: [0, 0, 0], flag: "my" },
     ],
   },
-  // ...other courts
+  {
+    id: 2,
+    name: "Court 2",
+    teams: [
+      { name: "Team A", scores: [0, 0, 0], flag: "hk" },
+      { name: "Team B", scores: [0, 0, 0], flag: "pk" },
+    ],
+  },
+  {
+    id: 3,
+    name: "Court 3",
+    teams: [
+      { name: "Team A", scores: [0, 0, 0], flag: "th" },
+      { name: "Team B", scores: [0, 0, 0], flag: "in" },
+    ],
+  },
+  {
+    id: 4,
+    name: "Court 4",
+    teams: [
+      { name: "Team A", scores: [0, 0, 0], flag: "sg" },
+      { name: "Team B", scores: [0, 0, 0], flag: "kr" },
+    ],
+  },
 ];
 
 export default function handler(req, res) {
